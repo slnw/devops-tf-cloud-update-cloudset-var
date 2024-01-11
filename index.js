@@ -40,9 +40,8 @@ async function main() {
       core.setFailed("Variable Set Could Not Be Found");
     }
 
-    // find variable id from variable name in variable set
     const terraformVariableSetEndpoint =
-      "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/vars";
+      "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/relationships/vars";
     const response1 = await axios.get(terraformVariableSetEndpoint, options);
     var variableId = response1.data.data.find(
       (item) => item.attributes.key === variableName
