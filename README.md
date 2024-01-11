@@ -1,4 +1,4 @@
-# Update Terraform Cloud Variable
+# Update Terraform Cloud Variable Set
 
 This action updates a Terraform Cloud variable **set**
 https://www.terraform.io/docs/cloud/api/variables.html
@@ -40,7 +40,7 @@ This is the Terraform Host Name.  default: app.terraform.io.
 ## Example usage
 
 ```
-uses: slnw/devops-tf-cloud-set-update@v1.0   
+uses: slnw/devops-tf-cloud-update-cloudset-var@v1.0   
 with:  
   variableSetName: mySet  
   organizationName: {{env.organization}}  
