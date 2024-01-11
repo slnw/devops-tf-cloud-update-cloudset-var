@@ -3,6 +3,8 @@
 This action updates a Terraform Cloud variable **set**
 https://www.terraform.io/docs/cloud/api/variables.html
 
+If variable name doesn't exist it will automatically create it.
+
 It borrows heavily from the work done by https://github.com/patrontech/devops-tf-cloud-update-var and https://github.com/sarathkrish/invoke-terraform-run-api so shout out to them.
 
 ## Inputs
