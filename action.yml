@@ -1,9 +1,6 @@
-name: 'Update Terraform Cloud Variable'
-description: 'Invoke Terraform API to update Terraform variable value'
+name: 'Update Terraform Cloud Variable Set'
+description: 'Invoke Terraform API to update Terraform variable set value'
 inputs:
-  workSpaceName:
-    description: 'Terraform workspace name'
-    required: true
   organizationName:
     description: 'Terraform organization Name'
     required: true
@@ -12,12 +9,16 @@ inputs:
     required: true
   terraformHost:
     description: 'Terraform Host Name'
+    default: 'app.terraform.io'
+  variableSetName:
+    description: 'The variable set key / name as shown in Terraform Cloud'
     required: true
   variableName:
     description: 'The variable key / name as shown in Terraform Cloud'
     required: true
   variableHCL:
     description: 'Specify true or false if variable should be in HCL format'
+    default: false
     required: false
   variableValue:
     description: 'The variable value to be replaced in Terraform Cloud'
