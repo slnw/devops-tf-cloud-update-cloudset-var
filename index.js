@@ -31,7 +31,7 @@ async function main() {
       organizationName +
       "/varsets";
     const response = await axios.get(terraformWorkSpaceEndpoint, options);
-    var variableSetId = response.data.find(
+    var variableSetId = response.data.data.find(
       (item) => item.attributes.name === variableSet
     )?.id;
     console.log("variable set id:" + variableSetId);
@@ -53,7 +53,7 @@ async function main() {
         console.log("variable not found, creating it");
         const terraformVariableSetEndpoint =
             "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/vars";
-        const response1 = await axios.post(terraformVariableSetEndpoint, {
+        await axios.post(terraformVariableSetEndpoint, {
             data: {
             type: "vars",
             attributes: {
@@ -69,7 +69,7 @@ async function main() {
         console.log("variable found, updating it");
         const terraformVariableSetEndpoint =
             "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/vars/" + variableId;
-        const response1 = await axios.patch(terraformVariableSetEndpoint, {
+        await axios.patch(terraformVariableSetEndpoint, {
             data: {
             type: "vars",
             attributes: {
