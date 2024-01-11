@@ -51,7 +51,7 @@ async function main() {
     if (variableId == null) { // if variable not found, create it
         console.log("variable not found, creating it");
         const terraformVariableSetEndpoint =
-            "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/vars";
+            "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/relationships/vars";
         await axios.post(terraformVariableSetEndpoint, {
             data: {
             type: "vars",
