@@ -67,7 +67,7 @@ async function main() {
     }else{
         console.log("variable found, updating it");
         const terraformVariableSetEndpoint =
-            "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/vars/" + variableId;
+            "https://" + terraformHost + "/api/v2/varsets/" + variableSetId + "/relationships/vars/" + variableId;
         await axios.patch(terraformVariableSetEndpoint, {
             data: {
             type: "vars",
